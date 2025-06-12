@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="home-container">
+    <section class="home-hero">
+        <h1>Welcome to the Product Manager</h1>
+        <p>Manage your products easily and efficiently. Sign in or create an account to get started.</p>
+        {% if not user.is_authenticated %}
+        <div class="home-actions">
+            <a href="/signup" class="btn">Create Account</a>
+            <a href="/signin" class="btn btn-outline">Sign In</a>
+        </div>
+        {% endif %}
+    </section>
+
+    <section class="home-info">
+        <h2>Why use this app?</h2>
+        <ul>
+            <li>✅ Easy product creation and management</li>
+            <li>✅ Secure user authentication</li>
+            <li>✅ Clean and responsive design</li>
+        </ul>
+    </section>
+</div>
+{% endblock %}

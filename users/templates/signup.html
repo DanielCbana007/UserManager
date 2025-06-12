@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-container">
+    <h1 class="form-title">Create your account</h1>
+
+    {% if error %}
+        <p class="form-error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" class="form-content">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="form-button">Signup</button>
+    </form>
+</div>
+{% endblock %}
