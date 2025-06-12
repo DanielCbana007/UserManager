@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-    
-    <h1>Hello</h1>
-    <br>
-    {{error}}
-    <form method="POST">
+<div class="form-container">
+    <h1 class="form-title">Create your account</h1>
+
+    {% if error %}
+        <p class="form-error">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" class="form-content">
         {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">signup</button>
+        {{ form.as_p }}
+        <button type="submit" class="form-button">Signup</button>
     </form>
+</div>
 {% endblock %}

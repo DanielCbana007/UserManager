@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <h1>home</h1>
-        <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti nulla aperiam magnam? Porro voluptates maiores iure sed excepturi. Itaque nemo rem ab architecto error! Voluptas consequatur minima aliquam facere amet sed dolorum dolore non, illum quos in? Praesentium id, veniam illo ipsum ad enim ut blanditiis doloribus dicta earum officia vero quos obcaecati accusantium, repellendus veritatis eos magni est quia odio minima! Vero, eos sunt veritatis nemo eius impedit quae doloribus laboriosam nulla! Doloremque, voluptatum maxime enim eligendi hic sit voluptas at ad, inventore incidunt animi, soluta facere reiciendis obcaecati blanditiis. Est nam reiciendis quia adipisci, aliquam in natus voluptates?</p>
-    </div>
+<div class="home-container">
+    <section class="home-hero">
+        <h1>Welcome to the Product Manager</h1>
+        <p>Manage your products easily and efficiently. Sign in or create an account to get started.</p>
+        {% if not user.is_authenticated %}
+        <div class="home-actions">
+            <a href="/signup" class="btn">Create Account</a>
+            <a href="/signin" class="btn btn-outline">Sign In</a>
+        </div>
+        {% endif %}
+    </section>
+
+    <section class="home-info">
+        <h2>Why use this app?</h2>
+        <ul>
+            <li>✅ Easy product creation and management</li>
+            <li>✅ Secure user authentication</li>
+            <li>✅ Clean and responsive design</li>
+        </ul>
+    </section>
+</div>
 {% endblock %}

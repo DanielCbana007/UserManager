@@ -54,7 +54,7 @@ def createProducts(request):
             new_product = form.save(commit=False)
             new_product.producer = request.user
             new_product.save()
-            return redirect('home')
+            return redirect('listproducts')
         else:
             return render(request, 'create_product.html', {
                 'form': form,
